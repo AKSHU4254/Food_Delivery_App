@@ -5,9 +5,8 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 
 
-const Add = () => {
+const Add = ({url}) => {
 
-    const url = "http://localhost:4000"
     const [image, setImage] = useState(false)
     const [data, setData] = useState({
         name: "",
@@ -65,7 +64,7 @@ const Add = () => {
                 </div>
                 <div className="add-product-description flex-col">
                     <p>Product Description</p>
-                    <textarea onChange={onChangeHandler} value={data.description} name="description" rows="6" placeholder='Write Content here' required />
+                    <textarea onChange={onChangeHandler} value={data.description} name="description" rows="6" placeholder='Write Content here' />
                 </div>
                 <div className="add-category-price">
                     <div className="add-category flex-col">
