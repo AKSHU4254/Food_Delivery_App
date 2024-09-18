@@ -7,12 +7,14 @@ const Navbar = ({ setShowLogin }) => {
 
     const [menu, setmenu] = useState("home");
 
-    const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+    const { getTotalCartAmount, setCartItems, token, setToken } = useContext(StoreContext)
+
     const navigate = useNavigate();
     const logout = () => {
+        setCartItems([]);
         localStorage.removeItem("token");
         setToken("");
-        navigate('/')
+        navigate('/');
     }
     return (
         <div className='navbar'>
