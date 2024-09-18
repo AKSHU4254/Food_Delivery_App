@@ -10,7 +10,7 @@ const Navbar = ({ setShowLogin }) => {
     const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
     const navigate = useNavigate();
     const logout = () => {
-        localStorage.removeItem("Token");
+        localStorage.removeItem("token");
         setToken("");
         navigate('/')
     }
